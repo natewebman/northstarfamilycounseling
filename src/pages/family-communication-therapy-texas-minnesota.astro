@@ -3,24 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CTASection from '../components/CTASection.astro';
 
 const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
-
-const focusAreas = [
-  {
-    title: 'Communication Breakdown',
-    desc: 'Moving from reactive arguing and silent treatments to responsive, active listening.',
-    icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>',
-  },
-  {
-    title: 'Cycle Breaking',
-    desc: 'Identifying and stopping generational patterns of dysfunction and emotional avoidance.',
-    icon: '<polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>',
-  },
-  {
-    title: 'Relational Healing',
-    desc: 'Rebuilding trust, establishing healthy boundaries, and fostering emotional intimacy after ruptures.',
-    icon: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>',
-  },
-];
 ---
 
 <BaseLayout
@@ -78,19 +60,44 @@ const focusAreas = [
           </div>
         </div>
         <div class="grid gap-6">
-          {focusAreas.map((item) => (
-            <div class="animate-on-scroll fade-right bg-white p-6 rounded-2xl shadow-sm flex gap-4 items-start">
-              <div class="bg-navy/5 p-3 rounded-lg shrink-0">
-                <svg class="w-6 h-6 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <Fragment set:html={item.icon} />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-navy mb-1">{item.title}</h3>
-                <p class="text-slate text-sm">{item.desc}</p>
-              </div>
+          <!-- Communication Breakdown -->
+          <div class="animate-on-scroll fade-right bg-white p-6 rounded-2xl shadow-sm flex gap-4 items-start">
+            <div class="bg-navy/5 p-3 rounded-lg shrink-0">
+              <svg class="w-6 h-6 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
             </div>
-          ))}
+            <div>
+              <h3 class="font-bold text-navy mb-1">Communication Breakdown</h3>
+              <p class="text-slate text-sm">Moving from reactive arguing and silent treatments to responsive, active listening.</p>
+            </div>
+          </div>
+          <!-- Cycle Breaking -->
+          <div class="animate-on-scroll fade-right bg-white p-6 rounded-2xl shadow-sm flex gap-4 items-start">
+            <div class="bg-navy/5 p-3 rounded-lg shrink-0">
+              <svg class="w-6 h-6 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-navy mb-1">Cycle Breaking</h3>
+              <p class="text-slate text-sm">Identifying and stopping generational patterns of dysfunction and emotional avoidance.</p>
+            </div>
+          </div>
+          <!-- Relational Healing -->
+          <div class="animate-on-scroll fade-right bg-white p-6 rounded-2xl shadow-sm flex gap-4 items-start">
+            <div class="bg-navy/5 p-3 rounded-lg shrink-0">
+              <svg class="w-6 h-6 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-navy mb-1">Relational Healing</h3>
+              <p class="text-slate text-sm">Rebuilding trust, establishing healthy boundaries, and fostering emotional intimacy after ruptures.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
