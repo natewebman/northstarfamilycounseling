@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+
+const ppdSymptoms = [
+  'Overwhelming sadness, emptiness, or frequent crying',
+  'Severe mood swings or uncharacteristic irritability',
+  'Difficulty bonding with your baby or feeling detached',
+  'Withdrawing from your partner, family, and friends',
+  'Feeling like you are "failing" at motherhood',
+  'Overwhelming fatigue or loss of energy',
+];
+
+const ppaSymptoms = [
+  "Constant, spiraling worry that can't be eased",
+  'Feeling that something catastrophic is going to happen',
+  'Racing thoughts or inability to quiet your mind',
+  'Physical symptoms like rapid heartbeat, chest tightness, or nausea',
+  'Inability to sleep even when the baby is finally sleeping',
+  'Intrusive, frightening thoughts about harm coming to your baby',
+];
+---
+
+<BaseLayout
+  title="Postpartum Depression Therapy in Frisco, Texas | North Star Counseling"
+  description="Expert postpartum depression therapy in Frisco, TX. Compassionate support for new mothers. North Star Specialty Counseling & Therapy."
+>
+
+  <!-- Hero Section -->
+  <section class="relative py-24 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1661185129095-c19845842cee"
+        alt="Postpartum Support Therapy in Frisco, TX"
+        class="w-full h-full object-cover opacity-20"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/90 to-cream"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 max-w-4xl text-center">
+      <div class="animate-fade-up">
+        <span class="text-navy font-semibold tracking-wider uppercase text-sm mb-4 block">
+          Postpartum Support in Frisco, TX
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-navy mb-6 leading-tight">
+          Postpartum Depression Support in Frisco, Texas
+        </h1>
+        <p class="text-xl text-slate leading-relaxed mb-10 max-w-2xl mx-auto">
+          Navigating the emotional minefield of early motherhood doesn't have to be done alone. Find your footing, regulate your nervous system, and reclaim your joy.
+        </p>
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navy/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+        >
+          Get a Free 15-Minute Consultation
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Overview -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="animate-on-scroll fade-up">
+        <h2 class="text-3xl font-serif font-bold text-navy mb-6 text-center">
+          Postpartum Therapy for Frisco Mothers
+        </h2>
+        <div class="space-y-6 text-slate text-lg leading-relaxed">
+          <p>
+            In a high-achieving community like Frisco, there is an immense, unspoken pressure to "bounce back" immediately after giving birth. You're expected to maintain the perfect home, return to your career seamlessly, and look like you have it all together—all while running on zero sleep.
+          </p>
+          <p>
+            The transition to motherhood is often portrayed as a time of pure bliss, but the clinical reality is frequently much more complex. The <strong class="text-navy">fourth trimester</strong> can feel like an emotional minefield, characterized by a constant on-call energy that drains your physical and mental reserves, making genuine bonding feel impossible.
+          </p>
+          <p>
+            Postpartum Depression (PPD) and Postpartum Anxiety (PPA) are common, treatable clinical conditions. They are not a reflection of your capability as a mother, but rather a complex interplay of biological shifts, sleep deprivation, and nervous system dysregulation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms Section -->
+  <section class="py-20 bg-cream">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h2 class="text-3xl font-serif font-bold text-navy mb-12 text-center">
+        Specialized Postpartum Support in Frisco, TX
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="animate-on-scroll fade-left bg-white p-8 rounded-2xl shadow-sm border border-navy/5">
+          <h3 class="text-2xl font-bold text-navy mb-6 border-b border-navy/10 pb-4">Postpartum Depression</h3>
+          <ul class="space-y-4">
+            {ppdSymptoms.map((item) => (
+              <li class="flex items-start gap-3 text-slate">
+                <svg class="w-6 h-6 text-navy/60 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="animate-on-scroll fade-right bg-white p-8 rounded-2xl shadow-sm border border-navy/5">
+          <h3 class="text-2xl font-bold text-navy mb-6 border-b border-navy/10 pb-4">Postpartum Anxiety</h3>
+          <ul class="space-y-4">
+            {ppaSymptoms.map((item) => (
+              <li class="flex items-start gap-3 text-slate">
+                <svg class="w-6 h-6 text-navy/60 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Moving from Surviving to Bonding"
+    text="Our therapeutic approach is grounded in evidence-based practices tailored specifically for the perinatal period. We focus on nervous system regulation, processing birth trauma, adjusting to profound identity shifts, and developing practical coping strategies. We help you quiet the noise of perfectionism so you can move from merely surviving the days to genuinely bonding with your child."
+  />
+
+</BaseLayout>

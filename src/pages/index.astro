@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+
+const services = [
+  {
+    title: 'Postpartum Support for Frisco Mothers',
+    description: 'Moving from surviving to bonding. Specialized support for the emotional minefield of early motherhood.',
+    icon: 'heart-handshake',
+    path: '/postpartum-depression-therapy-texas-minnesota',
+  },
+  {
+    title: 'Stress Management Therapy in Frisco, TX',
+    description: 'Burnout recovery and nervous system regulation for high-achieving professionals and overwhelmed parents.',
+    icon: 'brain',
+    path: '/stress-management-therapy-frisco-texas',
+  },
+  {
+    title: 'Family Communication Counseling in Frisco',
+    description: 'Restoring emotional safety and breaking unhealthy cycles in family relationships.',
+    icon: 'users',
+    path: '/family-communication-therapy-texas-minnesota',
+  },
+  {
+    title: 'General Therapy in Frisco',
+    description: 'Evidence-based approaches tailored to your unique life transitions and challenges.',
+    icon: 'shield',
+    path: '/about',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService", "MedicalBusiness"],
+  "name": "North Star Specialty Counseling & Therapy",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Frisco",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Frisco, TX", "Prosper, TX", "Little Elm, TX", "Texas"],
+  "url": "https://northstarfamilycounseling.com",
+  "description": "Award-winning specialty counseling in Frisco, Texas. Expert therapy for postpartum depression, stress management, and family communication.",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Postpartum Depression Therapy" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stress Management Therapy" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Communication Counseling" } },
+  ],
+};
+
+// SVG icon paths
+const icons: Record<string, string> = {
+  'heart-handshake': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/>',
+  'brain': '<path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/>',
+  'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'shield': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  'star': '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+};
+---
+
+<BaseLayout
+  title="Specialty Counseling in Frisco, TX | North Star Specialty Counseling & Therapy"
+  description="Award-winning specialty counseling in Frisco, Texas. Expert therapy for postpartum depression, stress management, and family communication. Serving Frisco, Prosper, and Little Elm."
+  schema={schema}
+>
+
+  <!-- Hero Section -->
+  <section class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1661876868843-baf403e7e866"
+        alt="Frisco Counseling Office - North Star Specialty Counseling"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-navy/60 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 text-center text-white">
+      <div class="max-w-4xl mx-auto space-y-6 animate-fade-up">
+        <span class="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium tracking-wider uppercase mb-4">
+          Compassionate Care in Frisco, TX
+        </span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
+          Specialty Counseling & Therapy in Frisco, Texas
+        </h1>
+        <p class="text-lg md:text-xl text-cream/90 font-light max-w-2xl mx-auto leading-relaxed">
+          Expert clinical therapy for Frisco's high-achieving professionals and growing families.
+          Helping you navigate postpartum challenges, corporate burnout, and complex family dynamics with empathy and evidence-based care.
+        </p>
+        <div class="pt-8">
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-cream text-navy px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-[0_0_40px_rgba(245,241,232,0.3)] hover:shadow-[0_0_60px_rgba(245,241,232,0.5)] hover:-translate-y-1"
+          >
+            Get Started Now
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frisco Community Section -->
+  <section class="py-20 bg-white border-b border-navy/5">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll fade-left">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mb-6">
+            Understanding the Frisco Lifestyle
+          </h2>
+          <div class="space-y-4 text-slate text-lg leading-relaxed">
+            <p>
+              Living in Frisco means being part of a vibrant, fast-paced, and high-achieving community. Between demanding corporate careers, competitive youth sports, and the pressure to maintain a perfect family image, it's easy to feel overwhelmed and disconnected.
+            </p>
+            <p>
+              At North Star, we understand the unique pressures faced by Frisco residents. We don't just offer generic advice; we provide specialized, clinical support designed to help you regulate your nervous system, set sustainable boundaries, and find genuine connection amidst the chaos of modern life.
+            </p>
+          </div>
+          <div class="mt-8">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-navy font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+            >
+              Book Your Free Consultation
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="animate-on-scroll fade-right grid grid-cols-2 gap-4">
+          <div class="bg-cream p-6 rounded-2xl space-y-3">
+            <svg class="w-8 h-8 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <h3 class="font-bold text-navy">High Achievers</h3>
+            <p class="text-sm text-slate">Therapy tailored for driven professionals facing burnout.</p>
+          </div>
+          <div class="bg-cream p-6 rounded-2xl space-y-3 mt-8">
+            <svg class="w-8 h-8 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            <h3 class="font-bold text-navy">Growing Families</h3>
+            <p class="text-sm text-slate">Specialized support for the transition into parenthood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-24 bg-cream">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mb-4">Areas of Clinical Focus</h2>
+        <p class="text-slate text-lg">
+          Evidence-based therapeutic approaches tailored to your specific needs and life stage.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-on-scroll stagger-children fade-up">
+        {services.map((service) => (
+          <a
+            href={service.path}
+            class="block h-full bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-navy/5 group animate-on-scroll fade-up"
+          >
+            <div class="w-14 h-14 bg-navy/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-navy transition-colors duration-300">
+              <svg class="w-7 h-7 text-navy group-hover:text-white transition-colors duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <Fragment set:html={icons[service.icon]} />
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-navy mb-3">{service.title}</h2>
+            <p class="text-slate leading-relaxed mb-6">{service.description}</p>
+            <div class="flex items-center text-navy font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
+              Learn more
+              <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="py-24 bg-navy text-cream">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll fade-left space-y-8">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold leading-tight text-white">
+            Clinical Expertise Rooted in Empathy
+          </h2>
+          <div class="space-y-6 text-cream/80 text-lg leading-relaxed">
+            <p>
+              At North Star, we understand that reaching out for help is a profound act of courage. Our practice is built on the foundation of providing a safe, non-judgmental space where true healing can begin.
+            </p>
+            <p>
+              We offer flexible care options including in-person sessions at our Frisco, TX location and secure telehealth services, ensuring that therapy fits seamlessly into your busy schedule.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <div class="font-bold text-xl text-white mb-1">In-Person</div>
+              <div class="text-sm text-cream/70">Frisco, TX Office</div>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+              <div class="font-bold text-xl text-white mb-1">Telehealth</div>
+              <div class="text-sm text-cream/70">Secure Online Sessions</div>
+            </div>
+          </div>
+          <div class="pt-4">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 bg-cream text-navy px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-lg"
+            >
+              Schedule Your First Session
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll fade-right relative">
+          <div class="aspect-square rounded-3xl overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1675270714610-11a5cadcc7b3"
+              alt="Licensed Therapist in Frisco, Texas"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-cream/10 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute -top-6 -right-6 w-48 h-48 bg-cream/10 rounded-full blur-3xl -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

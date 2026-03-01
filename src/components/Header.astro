@@ -1,0 +1,114 @@
+---
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Postpartum Therapy', path: '/postpartum-depression-therapy-texas-minnesota' },
+  { name: 'Stress Management', path: '/stress-management-therapy-frisco-texas' },
+  { name: 'Family Therapy', path: '/family-communication-therapy-texas-minnesota' },
+  { name: 'About Our Frisco Team', path: '/about' },
+];
+
+const currentPath = Astro.url.pathname;
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+---
+
+<header class="sticky top-0 z-50 w-full bg-cream/90 backdrop-blur-md border-b border-navy/10 shadow-sm">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <svg class="h-8 w-8 text-navy group-hover:rotate-45 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        <span class="font-serif text-2xl font-bold text-navy tracking-tight">
+          North Star
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.path}
+            class:list={[
+              'text-sm font-medium transition-colors hover:text-navy',
+              currentPath === link.path ? 'text-navy font-semibold' : 'text-slate',
+            ]}
+          >
+            {link.name}
+          </a>
+        ))}
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-navy text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-navy/90 transition-colors shadow-md hover:shadow-lg whitespace-nowrap"
+        >
+          Get Started Now
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="lg:hidden p-2 text-navy"
+        id="mobile-menu-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <!-- Hamburger icon -->
+        <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-cream border-b border-navy/10 overflow-hidden">
+    <nav class="flex flex-col px-4 py-6 space-y-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.path}
+          class:list={[
+            'text-lg font-medium px-4 py-2 rounded-lg',
+            currentPath === link.path
+              ? 'bg-navy/5 text-navy'
+              : 'text-slate hover:bg-navy/5 hover:text-navy',
+          ]}
+        >
+          {link.name}
+        </a>
+      ))}
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-navy text-white px-4 py-3 rounded-lg text-center font-medium mt-4"
+      >
+        Get Started Now
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle?.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

@@ -1,0 +1,67 @@
+---
+interface Props {
+  heading?: string;
+  text?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+  variant?: 'navy' | 'white';
+}
+
+const {
+  heading = 'Ready to begin?',
+  text = 'All scheduling and consultations are handled through our secure client portal.',
+  primaryLabel = 'Book Your Free Consultation',
+  secondaryLabel = 'Schedule Your First Session',
+  variant = 'navy',
+} = Astro.props;
+
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+const isNavy = variant === 'navy';
+---
+
+<section class:list={['py-20', isNavy ? 'bg-navy text-cream' : 'bg-white']}>
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h2 class:list={['text-3xl font-serif font-bold mb-8', isNavy ? 'text-white' : 'text-navy']}>
+      {heading}
+    </h2>
+    {text && (
+      <p class:list={['text-lg leading-relaxed mb-12 max-w-3xl mx-auto', isNavy ? 'text-cream/80' : 'text-slate']}>
+        {text}
+      </p>
+    )}
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg',
+          isNavy
+            ? 'bg-cream text-navy hover:bg-white'
+            : 'bg-navy text-white hover:bg-navy/90',
+        ]}
+      >
+        {primaryLabel}
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      {secondaryLabel && (
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            'inline-flex items-center justify-center gap-2 border px-8 py-4 rounded-full text-lg font-semibold transition-all',
+            isNavy
+              ? 'bg-transparent border-cream text-cream hover:bg-cream/10'
+              : 'bg-transparent border-navy text-navy hover:bg-navy/5',
+          ]}
+        >
+          {secondaryLabel}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

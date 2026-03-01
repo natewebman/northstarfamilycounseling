@@ -1,0 +1,109 @@
+---
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-navy text-cream py-12 md:py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Local Resources Section -->
+    <div class="border-b border-cream/10 pb-10 mb-10">
+      <h2 class="text-2xl font-serif font-bold mb-4 text-white">Serving Frisco, Texas & Beyond</h2>
+      <p class="text-cream/80 leading-relaxed max-w-4xl">
+        Serving the <strong class="text-white font-medium">Frisco, TX</strong> community including
+        <strong class="text-white font-medium">The Star</strong>,
+        <strong class="text-white font-medium">Stonebriar</strong>, and families in
+        <strong class="text-white font-medium">Frisco ISD</strong>.
+        We provide in-person therapy in Frisco and telehealth services throughout Texas.
+        Proudly serving Frisco,
+        <strong class="text-white font-medium">Prosper</strong>, and
+        <strong class="text-white font-medium">Little Elm</strong>.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+
+      <!-- Brand & Info -->
+      <div class="space-y-4">
+        <a href="/" class="flex items-center gap-2">
+          <svg class="h-8 w-8 text-cream" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          <span class="font-serif text-2xl font-bold tracking-tight">
+            North Star
+          </span>
+        </a>
+        <p class="text-cream/80 text-sm max-w-xs leading-relaxed">
+          Specialty Counseling & Therapy providing compassionate, evidence-based care for life's hardest transitions.
+        </p>
+        <div class="pt-4 space-y-2">
+          <div class="flex items-center gap-2 text-cream/80 text-sm">
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Frisco, Texas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-semibold text-lg mb-4 text-white">Services</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/postpartum-depression-therapy-texas-minnesota" class="text-cream/80 hover:text-white text-sm transition-colors">
+              Postpartum Therapy
+            </a>
+          </li>
+          <li>
+            <a href="/stress-management-therapy-frisco-texas" class="text-cream/80 hover:text-white text-sm transition-colors">
+              Stress Management
+            </a>
+          </li>
+          <li>
+            <a href="/family-communication-therapy-texas-minnesota" class="text-cream/80 hover:text-white text-sm transition-colors">
+              Family Therapy
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="text-cream/80 hover:text-white text-sm transition-colors">
+              About Our Frisco Team
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Licensing & CTA -->
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg mb-4 text-white">Licensing</h3>
+          <p class="text-cream/80 text-sm leading-relaxed border-l-2 border-cream/20 pl-4">
+            Serving the Frisco, TX community and licensed for telehealth.
+            Licensed to provide therapy in <strong class="text-white">Texas</strong> and
+            <strong class="text-white">Minnesota</strong>.
+            Offering both in-person sessions in Frisco, TX and secure telehealth services.
+          </p>
+        </div>
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-cream text-navy px-6 py-3 rounded-full text-sm font-semibold hover:bg-white transition-colors shadow-lg"
+        >
+          Book Your Free Consultation
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-cream/60 text-xs">
+        &copy; {currentYear} North Star Specialty Counseling & Therapy. All rights reserved.
+      </p>
+      <p class="text-cream/60 text-xs">
+        Designed for healing and growth.
+      </p>
+    </div>
+  </div>
+</footer>

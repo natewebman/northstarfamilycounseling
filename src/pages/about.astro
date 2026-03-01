@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+---
+
+<BaseLayout
+  title="About North Star Specialty Counseling in Frisco, Texas | Contact Us"
+  description="Learn about North Star Specialty Counseling & Therapy in Frisco, TX. Meet our licensed therapists and contact us for a consultation."
+>
+
+  <!-- About Section -->
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-fade-up">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
+            <img
+              src="https://images.unsplash.com/photo-1675270714610-11a5cadcc7b3"
+              alt="Licensed Therapist Frisco Texas"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-navy/10 mix-blend-multiply"></div>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll fade-right space-y-8">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-navy mb-4">
+              About North Star Specialty Counseling in Frisco, Texas
+            </h1>
+            <h2 class="text-2xl text-slate font-medium mb-2">
+              Our Frisco Counseling Team
+            </h2>
+            <p class="text-xl text-slate font-medium">
+              Megan Corrieri, Clinical Therapist & Founder
+            </p>
+          </div>
+
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>
+              I believe that therapy is a collaborative process. My approach is warm, direct, and deeply rooted in clinical expertise. I chose to establish North Star in Frisco because I deeply understand the unique pressures of this community—the drive for excellence, the fast-paced lifestyle, and the hidden toll it can take on individuals and families.
+            </p>
+            <p>
+              With extensive experience in perinatal mental health, burnout recovery, and systemic family therapy, I provide a safe container for you to explore your experiences, understand your nervous system, and create meaningful change. We don't just treat symptoms; we look at the whole picture of your life to foster genuine resilience.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-navy/10 text-sm font-medium text-navy">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              Licensed to provide therapy in Texas and Minnesota
+            </div>
+            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-navy/10 text-sm font-medium text-navy">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              Perinatal Mental Health Certified
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas & Contact -->
+  <section class="py-20 bg-navy text-cream">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-serif font-bold mb-12 text-white">Contact North Star Therapy in Frisco, TX</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="animate-on-scroll fade-left bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+          <svg class="w-8 h-8 text-cream mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <h3 class="text-xl font-bold mb-2 text-white">In-Person Therapy</h3>
+          <p class="text-cream/80">
+            Physical location in Frisco, Texas. Providing a calm, confidential space for local clients to disconnect from the daily rush.
+          </p>
+        </div>
+        <div class="animate-on-scroll fade-right bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+          <svg class="w-8 h-8 text-cream mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          </svg>
+          <h3 class="text-xl font-bold mb-2 text-white">Telehealth Services</h3>
+          <p class="text-cream/80">
+            Secure, HIPAA-compliant online therapy available for those who need flexible scheduling.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white text-navy p-10 rounded-3xl shadow-xl max-w-2xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4">Ready to begin?</h3>
+        <p class="text-slate mb-8">
+          All scheduling and consultations are handled through our secure client portal. Click below to view availability and book your initial consultation.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navy/90 transition-all shadow-lg w-full sm:w-auto"
+          >
+            Get a Free 15-Minute Consultation
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

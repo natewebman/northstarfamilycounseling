@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-slate/10;
+  }
+  body {
+    @apply bg-cream text-slate font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-navy;
+  }
+}
+
+/* Scroll-triggered animation utilities */
+.animate-on-scroll {
+  opacity: 0;
+}
+.animate-on-scroll.is-visible {
+  animation-fill-mode: forwards;
+}
+.animate-on-scroll.is-visible.fade-up {
+  animation: fade-up 0.7s ease-out forwards;
+}
+.animate-on-scroll.is-visible.fade-left {
+  animation: fade-left 0.7s ease-out forwards;
+}
+.animate-on-scroll.is-visible.fade-right {
+  animation: fade-right 0.7s ease-out forwards;
+}
+.animate-on-scroll.is-visible.fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Stagger children */
+.stagger-children.is-visible > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children.is-visible > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-children.is-visible > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-children.is-visible > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-children.is-visible > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-children.is-visible > *:nth-child(6) { animation-delay: 500ms; }

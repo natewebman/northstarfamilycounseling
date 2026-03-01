@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const bookingUrl = 'https://northstarfrisco.com/?utm_campaign=nscounselingandtherapy';
+
+const focusAreas = [
+  {
+    title: 'Communication Breakdown',
+    desc: 'Moving from reactive arguing and silent treatments to responsive, active listening.',
+    icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>',
+  },
+  {
+    title: 'Cycle Breaking',
+    desc: 'Identifying and stopping generational patterns of dysfunction and emotional avoidance.',
+    icon: '<polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>',
+  },
+  {
+    title: 'Relational Healing',
+    desc: 'Rebuilding trust, establishing healthy boundaries, and fostering emotional intimacy after ruptures.',
+    icon: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>',
+  },
+];
+---
+
+<BaseLayout
+  title="Family Therapy in Frisco, Texas | North Star Counseling"
+  description="Family communication and relationship therapy in Frisco, TX. Strengthen family bonds with expert counseling. North Star Specialty Counseling & Therapy."
+>
+
+  <!-- Hero Section -->
+  <section class="py-24 lg:py-32 bg-white border-b border-navy/5">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <div class="animate-fade-up">
+        <span class="text-navy/60 font-semibold tracking-wider uppercase text-sm mb-4 block">
+          Family Therapy in Frisco, TX
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-navy mb-6 leading-tight">
+          Family Communication Therapy in Frisco, Texas
+        </h1>
+        <p class="text-xl text-slate leading-relaxed mb-10 max-w-2xl mx-auto">
+          Break unhealthy generational cycles, improve communication patterns, and restore emotional safety in your household.
+        </p>
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navy/90 transition-all shadow-lg hover:-translate-y-0.5"
+        >
+          Start Your Journey Today
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Overview -->
+  <section class="py-20 bg-cream">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll fade-left">
+          <h2 class="text-3xl font-serif font-bold text-navy mb-6">
+            Family Therapy for Frisco Families
+          </h2>
+          <div class="space-y-4 text-slate text-lg leading-relaxed">
+            <p>
+              In Frisco, families are often juggling demanding careers, rigorous school expectations, and packed extracurricular schedules. This high-velocity lifestyle can easily lead to ships passing in the night, where communication breaks down into logistical updates or reactive arguments.
+            </p>
+            <p>
+              Families are complex emotional systems. When stress levels rise, families often find themselves stuck in repetitive, painful communication loops that leave everyone—especially children—feeling unheard and disconnected.
+            </p>
+            <p>
+              Our clinical approach focuses on uncovering these hidden patterns, addressing the root causes of conflict, and building a foundation of emotional safety where vulnerability is met with empathy rather than defensiveness.
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-6">
+          {focusAreas.map((item) => (
+            <div class="animate-on-scroll fade-right bg-white p-6 rounded-2xl shadow-sm flex gap-4 items-start">
+              <div class="bg-navy/5 p-3 rounded-lg shrink-0">
+                <svg class="w-6 h-6 text-navy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <Fragment set:html={item.icon} />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-navy mb-1">{item.title}</h3>
+                <p class="text-slate text-sm">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Relationship Counseling in Frisco, TX"
+    text="We utilize systemic therapy models to help families navigate transitions, resolve deep-seated conflicts, and establish healthy boundaries. Whether you are dealing with parenting challenges, adult-child estrangement, the impact of chronic stress on your kids, or blended family dynamics, we provide a neutral, structured environment for constructive dialogue."
+  />
+
+</BaseLayout>

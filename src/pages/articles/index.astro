@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getArticles } from '../../lib/supabase';
+
+// Fetch published articles from Supabase (returns empty array if Supabase not configured)
+const articles = await getArticles();
+---
+
+<BaseLayout
+  title="Mental Health Articles & Resources | North Star Counseling Frisco, TX"
+  description="Expert mental health articles and resources from North Star Specialty Counseling & Therapy in Frisco, Texas. Insights on postpartum support, stress management, family therapy, and more."
+>
+
+  <section class="py-20 lg:py-28">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16 animate-fade-up">
+        <span class="text-navy/60 font-semibold tracking-wider uppercase text-sm mb-4 block">
+          Resources & Insights
+        </span>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-navy mb-6">
+          Mental Health Articles
+        </h1>
+        <p class="text-xl text-slate leading-relaxed max-w-2xl mx-auto">
+          Evidence-based insights on therapy, mental wellness, and navigating life's toughest transitions from our Frisco clinical team.
+        </p>
+      </div>
+
+      {articles.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article: any) => (
+            <a
+              href={`/articles/${article.slug}`}
+              class="block bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-navy/5 group"
+            >
+              {article.category && (
+                <span class="text-xs font-semibold tracking-wider uppercase text-navy/60 mb-3 block">
+                  {article.category}
+                </span>
+              )}
+              <h2 class="text-xl font-bold text-navy mb-3 group-hover:text-navy/80 transition-colors">
+                {article.title}
+              </h2>
+              {article.meta_description && (
+                <p class="text-slate text-sm leading-relaxed mb-4">
+                  {article.meta_description}
+                </p>
+              )}
+              <div class="flex items-center text-navy font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
+                Read more
+                <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-white rounded-3xl border border-navy/5">
+          <p class="text-slate text-lg mb-4">Articles coming soon.</p>
+          <p class="text-slate/60">
+            We're preparing expert insights on mental health topics relevant to the Frisco community.
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+
+</BaseLayout>
