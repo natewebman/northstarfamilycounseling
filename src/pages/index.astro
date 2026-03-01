@@ -144,61 +144,39 @@ const icons: Record<string, string> = {
   </section>
 
   <!-- Trust / Clinical Expertise Section -->
-  <section class="py-24 bg-navy text-cream">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="animate-on-scroll fade-left space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold leading-tight text-white">
-            Clinical Expertise Rooted in Empathy
-          </h2>
-          <div class="space-y-6 text-cream/80 text-lg leading-relaxed">
-            <p>
-              At North Star, we understand that reaching out for help is a profound act of courage. Our practice is built on the foundation of providing a safe, non-judgmental space where true healing can begin.
-            </p>
-            <p>
-              With dual licensing in Texas and Minnesota, we offer flexible care options including in-person sessions at our Frisco, TX location and secure telehealth services across both states.
-            </p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <div class="bg-white/10 p-5 rounded-xl border border-white/10">
-              <div class="font-bold text-xl text-white mb-1">Texas</div>
-              <div class="text-sm text-cream/70">In-person (Frisco) & Telehealth</div>
-            </div>
-            <div class="bg-white/10 p-5 rounded-xl border border-white/10">
-              <div class="font-bold text-xl text-white mb-1">Minnesota</div>
-              <div class="text-sm text-cream/70">Secure Telehealth Services</div>
-            </div>
-          </div>
-          <div class="pt-4">
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 bg-cream text-navy px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-lg"
-            >
-              Schedule Your First Session
-              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
+  <section class="py-20 bg-navy text-cream">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold leading-tight text-white mb-8">
+        Clinical Expertise Rooted in Empathy
+      </h2>
+      <p class="text-cream/80 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
+        At North Star, we understand that reaching out for help is a profound act of courage. Our practice is built on the foundation of providing a safe, non-judgmental space where true healing can begin.
+      </p>
+      <p class="text-cream/80 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
+        With dual licensing in Texas and Minnesota, we offer flexible care options including in-person sessions at our Frisco, TX location and secure telehealth services across both states.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+        <div class="bg-white/10 px-8 py-5 rounded-xl border border-white/10">
+          <div class="font-bold text-xl text-white mb-1">Texas</div>
+          <div class="text-sm text-cream/70">In-person (Frisco) & Telehealth</div>
         </div>
-
-        <div class="animate-on-scroll fade-right relative">
-          <div class="aspect-square rounded-3xl overflow-hidden relative">
-            <img
-              src="https://images.unsplash.com/photo-1675270714610-11a5cadcc7b3?w=800&q=80"
-              alt="Professional therapy office setting"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
-          </div>
-          <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-cream/10 rounded-full blur-3xl -z-10"></div>
-          <div class="absolute -top-6 -right-6 w-48 h-48 bg-cream/10 rounded-full blur-3xl -z-10"></div>
+        <div class="bg-white/10 px-8 py-5 rounded-xl border border-white/10">
+          <div class="font-bold text-xl text-white mb-1">Minnesota</div>
+          <div class="text-sm text-cream/70">Secure Telehealth Services</div>
         </div>
       </div>
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 bg-cream text-navy px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-lg"
+      >
+        Schedule Your First Session
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
   </section>
 
